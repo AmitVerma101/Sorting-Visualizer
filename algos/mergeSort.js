@@ -121,7 +121,8 @@ async function sort1(x,l,r,time){
 }
 
 function MergeSort(){
-    
+  let close=document.getElementById("stop");
+  close.style.display="inline";
     let l,r;
     let speed = document.getElementById("myRange1").value;
     let time = calcTime(speed)

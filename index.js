@@ -43,6 +43,7 @@ function generateArray(){
     console.log(width)
     removeAllChildNodes(container);
     let interval=width/array.length;
+    data.value='';
     customRepeat(width,interval,container,array);
 
 }
@@ -159,6 +160,13 @@ function customArray(){
     let modalBody=document.getElementsByClassName("modalBody");
     console.log(modalBody[0])
     modalBody[0].style.display="flex"
+}
+
+ function reset(){
+    
+    location.reload();
+    
+  
 }
  
 

@@ -46,6 +46,9 @@ async function demo1(x,index1, index2, a, b, time) {
 }
 async function BubbleSort() 
 {
+  
+  let close=document.getElementById("stop");
+  close.style.display="inline";
   let speed = document.getElementById("myRange1").value;
   console.log("speed is "+speed);
    let time = calcTime(speed)

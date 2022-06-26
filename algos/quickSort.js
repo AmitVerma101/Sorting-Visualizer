@@ -105,6 +105,8 @@ async function partition(x,l,h,time)
  
  function QuickSort()
 {
+  let close=document.getElementById("stop");
+  close.style.display="inline";
     let l,h;
     let speed = document.getElementById("myRange1").value;
     let time = calcTime(speed)

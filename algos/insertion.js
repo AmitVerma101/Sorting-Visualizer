@@ -45,6 +45,8 @@ async function func1(a,key,time){
     a.style.height=key
 }   
 async function InsertionSort(){
+  let close=document.getElementById("stop");
+  close.style.display="inline";
     let key,index1;
     let speed = document.getElementById("myRange1").value;
     let time = calcTime(speed)

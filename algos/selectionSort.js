@@ -53,7 +53,9 @@ function count(number) {
   }
 
 async function SelectionSort(){
-    let min_index;
+  let close=document.getElementById("stop");
+  close.style.display="inline"; 
+  let min_index;
     let speed = document.getElementById("myRange1").value;
    let time = calcTime(speed)
       let number = document.getElementsByClassName("graph");
