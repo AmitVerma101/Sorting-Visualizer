@@ -1,4 +1,4 @@
-//declaring a global variable
+//declaring a global variable for the run and description
 var selector="";
 
 
@@ -181,6 +181,12 @@ function cross(){
     modalBody[0].style.display="none"
     
 }
+function cross1(){
+    let sortBody=document.getElementsByClassName("sortBody");
+    console.log(sortBody[0])
+    sortBody[0].style.display="none"
+    
+}
 
 
 
@@ -206,13 +212,57 @@ function showWindow(x){
     let sortBody=document.getElementsByClassName("sortBody");
     console.log(sortBody[0])
     sortBody[0].style.display="flex"
+    let heading= document.getElementById("heading");
+    if(selector==0){
+        heading.innerHTML="Bubble Sort";
+    
+
+       
+        
+    }
+    else if(selector==1){
+        heading.innerHTML="Selection Sort";
+         
+        }
+        else if(selector==2){
+            heading.innerHTML="Insertion Sort";
+            }
+            else if(selector==3){
+                heading.innerHTML="Merge Sort";
+                }
+             else if(selector==4){
+                heading.innerHTML="Quick Sort";
+              }
 }
 
 
  
 
 function desc(){
+    let heading= document.getElementById("heading");
+    if(selector==0){
+        heading.innerHTML="Bubble Sort";
     location.href="bubbleDesc.html";
+
+       
+        
+    }
+    else if(selector==1){
+        heading.innerHTML="Selection Sort";
+        location.href="selectionDesc.html";  
+        }
+        else if(selector==2){
+            heading.innerHTML="Insertion Sort";
+            location.href="insertionDesc.html";  
+            }
+            else if(selector==3){
+                heading.innerHTML="Merge Sort";
+                location.href="mergeDesc.html";  
+                }
+             else if(selector==4){
+                heading.innerHTML="Quick Sort";
+               location.href="quickDesc.html";  
+              }
 }
 
 
@@ -223,30 +273,31 @@ createArray();
 
 function sortSelector(x){
    let heading= document.getElementById("heading");
+   console.log(heading)
     if(selector==0){
+       
         BubbleSort();
-        heading.innerHTML="Bubble Sort";
         
     }
     else if(selector==1){
+      
        SelectionSort();
-       heading.innerHTML="Selection Sort";
 
 
     }
     else if(selector==2){
+        
         InsertionSort();
-        heading.innerHTML="Insertion Sort";
 
      }
      else if(selector==3){
+         
         MergeSort();
-        heading.innerHTML="Merge Sort";
 
      }
      else if(selector==4){
+        
         QuickSort();
-        heading.innerHTML="Quick Sort";
 
      }
 }
