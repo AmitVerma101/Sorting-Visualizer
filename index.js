@@ -1,8 +1,17 @@
+//declaring a global variable
+var selector="";
+
+
+
 function removeAllChildNodes(container) {
     while (container[0].firstElementChild) {
         container[0].removeChild(container[0].firstElementChild);
     }
 }
+
+
+
+
 function customRepeat(width,interval,container,array){
     let i=0;
     for (let index = 0; index < width; index=index+interval+1) {
@@ -18,6 +27,9 @@ function customRepeat(width,interval,container,array){
         i++;
 }
 }
+
+
+
 function Repeat(width,interval,container,element){
     for (let index = 0; index < width; index=index+interval+1) {
         let element=document.createElement('div')
@@ -29,6 +41,9 @@ function Repeat(width,interval,container,element){
         element.style.margin='1px';
 }
 }
+
+
+
 function generateArray(){
     let data=document.getElementById("customInput").value;
     let array=data.split(",");
@@ -47,6 +62,10 @@ function generateArray(){
     customRepeat(width,interval,container,array);
 
 }
+
+
+
+
 function createArray(){
     let a = document.getElementById("myRange2");
     let container= document.getElementsByClassName("graph");
@@ -119,6 +138,9 @@ function setValue(){
     }
     
 }
+
+
+
 function setValue2(){
     let a = document.getElementById("myRange2");
     if(a.value==1){
@@ -150,17 +172,25 @@ function setValue2(){
      }
      
  }
+
+
+
 function cross(){
     let modalBody=document.getElementsByClassName("modalBody");
     console.log(modalBody[0])
     modalBody[0].style.display="none"
     
 }
+
+
+
 function customArray(){
     let modalBody=document.getElementsByClassName("modalBody");
     console.log(modalBody[0])
     modalBody[0].style.display="flex"
 }
+
+
 
  function reset(){
     
@@ -168,11 +198,17 @@ function customArray(){
     
   
 }
-function showWindow(){
+
+
+
+function showWindow(x){
+    selector=x;
     let sortBody=document.getElementsByClassName("sortBody");
     console.log(sortBody[0])
     sortBody[0].style.display="flex"
 }
+
+
  
 
 function desc(){
@@ -180,6 +216,39 @@ function desc(){
 }
 
 
+
+
 createArray();
+
+
+function sortSelector(x){
+   let heading= document.getElementById("heading");
+    if(selector==0){
+        BubbleSort();
+        heading.innerHTML="Bubble Sort";
+        
+    }
+    else if(selector==1){
+       SelectionSort();
+       heading.innerHTML="Selection Sort";
+
+
+    }
+    else if(selector==2){
+        InsertionSort();
+        heading.innerHTML="Insertion Sort";
+
+     }
+     else if(selector==3){
+        MergeSort();
+        heading.innerHTML="Merge Sort";
+
+     }
+     else if(selector==4){
+        QuickSort();
+        heading.innerHTML="Quick Sort";
+
+     }
+}
 
  

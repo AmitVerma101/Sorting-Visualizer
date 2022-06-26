@@ -45,6 +45,9 @@ async function func1(a,key,time){
     a.style.height=key
 }   
 async function InsertionSort(){
+  let sortBody=document.getElementsByClassName("sortBody");
+    console.log(sortBody[0])
+    sortBody[0].style.display="none"
   let close=document.getElementById("stop");
   close.style.display="inline";
     let key,index1;

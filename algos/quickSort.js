@@ -105,6 +105,9 @@ async function partition(x,l,h,time)
  
  function QuickSort()
 {
+  let sortBody=document.getElementsByClassName("sortBody");
+    console.log(sortBody[0])
+    sortBody[0].style.display="none"
   let close=document.getElementById("stop");
   close.style.display="inline";
     let l,h;

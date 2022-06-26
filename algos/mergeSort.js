@@ -121,6 +121,9 @@ async function sort1(x,l,r,time){
 }
 
 function MergeSort(){
+  let sortBody=document.getElementsByClassName("sortBody");
+    console.log(sortBody[0])
+    sortBody[0].style.display="none"
   let close=document.getElementById("stop");
   close.style.display="inline";
     let l,r;

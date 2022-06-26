@@ -24,11 +24,11 @@
             </div>
             
             <div class="buttons">
-                <div><button onclick="showWindow()">Bubble Sort</button> </div>
-                <div><button onclick="SelectionSort()">Selection Sort</button> </div>
-                <div><button onclick="InsertionSort()">Insertion Sort</button> </div>
-                <div><button onclick="MergeSort()">Merge Sort</button> </div>
-                <div><button onclick="QuickSort()">Quick Sort</button> </div>
+                <div><button onclick="showWindow(0)">Bubble Sort</button> </div>
+                <div><button onclick="showWindow(1)">Selection Sort</button> </div>
+                <div><button onclick="showWindow(2)">Insertion Sort</button> </div>
+                <div><button onclick="showWindow(3)">Merge Sort</button> </div>
+                <div><button onclick="showWindow(4)">Quick Sort</button> </div>
             </div>
         </div>
 
@@ -55,11 +55,11 @@
       <div class="sortBody">
         <div class="sortContent">
           <form>
-            <h2>Bubble sort</h2>
+            <h2 id="heading">Bubble sort</h2>
             <!-- <input type="text" id="customInput" placeholder="3,4,5..."> -->
             <button onclick="desc()" type="button" id="Description">Description</button>
-            <button onclick="BubbleSort()" type="button" id="Run">Run</button>
-
+            <button onclick="sortSelector()" type="button" id="Run">Run</button>
+            
 
           </form>
           <button onclick="cross()" class="close1" id="close1">+</button>
