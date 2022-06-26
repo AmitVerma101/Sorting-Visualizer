@@ -24,7 +24,7 @@
             </div>
             
             <div class="buttons">
-                <div><button onclick="BubbleSort()">Bubble Sort</button> </div>
+                <div><button onclick="showWindow()">Bubble Sort</button> </div>
                 <div><button onclick="SelectionSort()">Selection Sort</button> </div>
                 <div><button onclick="InsertionSort()">Insertion Sort</button> </div>
                 <div><button onclick="MergeSort()">Merge Sort</button> </div>
@@ -52,6 +52,19 @@
         </div>
       </div>
       <div><button id="stop" onclick="reset()">Reset</button></div>
+      <div class="sortBody">
+        <div class="sortContent">
+          <form>
+            <h2>Bubble sort</h2>
+            <!-- <input type="text" id="customInput" placeholder="3,4,5..."> -->
+            <button onclick="desc()" type="button" id="Description">Description</button>
+            <button onclick="BubbleSort()" type="button" id="Run">Run</button>
+
+
+          </form>
+          <button onclick="cross()" class="close1" id="close1">+</button>
+        </div>
+      </div>
 
 
 

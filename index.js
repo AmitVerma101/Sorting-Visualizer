@@ -168,7 +168,16 @@ function customArray(){
     
   
 }
+function showWindow(){
+    let sortBody=document.getElementsByClassName("sortBody");
+    console.log(sortBody[0])
+    sortBody[0].style.display="flex"
+}
  
+
+function desc(){
+    location.href="bubbleDesc.html";
+}
 
 
  

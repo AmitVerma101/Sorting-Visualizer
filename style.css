@@ -117,7 +117,32 @@ body {
     display: none;
    
 }
+.sortBody {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    
+   
+}
+.sortContent{
+    width:500px;
+    height:300px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
 
+   
+
+    color: black;
+}
 .modalContent{
     width:500px;
     height:300px;
@@ -135,6 +160,17 @@ body {
     padding-top: 50px;
     font-size: 30px;
 }
+.sortContent h2 {
+    padding-top: 50px;
+    font-size: 30px;
+}
+.modalContent #submit {
+    font-size: 25px;
+    padding:5px;
+    margin-top:20px;
+    border-radius: 20px;
+    background-color: aquamarine;
+}
 .modalContent input {
     display: block;
     width:70%;
@@ -148,14 +184,37 @@ body {
     border-radius: 20px;
     
 }
-.modalContent #submit {
+.sortContent #Description {
     font-size: 25px;
     padding:5px;
-    margin-top:20px;
+    margin-top:40px;
+    margin-right:40px;
+    border-radius: 20px;
+    background-color: aquamarine;
+}
+.sortContent #Run {
+    font-size: 25px;
+    padding:5px;
+    margin-top:40px;
+    margin-left:40px;
+
     border-radius: 20px;
     background-color: aquamarine;
 }
 .close {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    cursor: pointer;
+    background-color: white;
+    border:none;
+
+    
+}
+.close1 {
     position: absolute;
     top: 0px;
     right: 20px;
