@@ -3,6 +3,21 @@ function removeAllChildNodes(container) {
         container[0].removeChild(container[0].firstElementChild);
     }
 }
+function customRepeat(width,interval,container,array){
+    let i=0;
+    for (let index = 0; index < width; index=index+interval+1) {
+        
+        let element=document.createElement('div')
+        element.style.height= `${4*array[i]}px`;
+      //  console.log(4*array[index])
+        element.style.width= `${interval}px`
+        container[0].appendChild(element);
+        console.log("Hello")
+    element.style.backgroundColor='blue';
+        element.style.margin='1px';
+        i++;
+}
+}
 function Repeat(width,interval,container,element){
     for (let index = 0; index < width; index=index+interval+1) {
         let element=document.createElement('div')
@@ -13,6 +28,23 @@ function Repeat(width,interval,container,element){
     element.style.backgroundColor='blue';
         element.style.margin='1px';
 }
+}
+function generateArray(){
+    let data=document.getElementById("customInput").value;
+    let array=data.split(",");
+    let modalBody=document.getElementsByClassName("modalBody");
+    console.log(modalBody[0])
+    modalBody[0].style.display="none";
+
+    console.log(array);
+    let container= document.getElementsByClassName("graph");
+
+    let width=container[0].clientWidth;
+    console.log(width)
+    removeAllChildNodes(container);
+    let interval=width/array.length;
+    customRepeat(width,interval,container,array);
+
 }
 function createArray(){
     let a = document.getElementById("myRange2");
@@ -117,5 +149,18 @@ function setValue2(){
      }
      
  }
+function cross(){
+    let modalBody=document.getElementsByClassName("modalBody");
+    console.log(modalBody[0])
+    modalBody[0].style.display="none"
+    
+}
+function customArray(){
+    let modalBody=document.getElementsByClassName("modalBody");
+    console.log(modalBody[0])
+    modalBody[0].style.display="flex"
+}
+ 
+
 
  

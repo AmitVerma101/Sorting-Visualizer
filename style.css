@@ -111,6 +111,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
+   
 }
 
 .modalContent{
@@ -143,7 +145,7 @@ body {
     border-radius: 20px;
     
 }
-.modalContent button {
+.modalContent #submit {
     font-size: 25px;
     padding:5px;
     margin-top:20px;
@@ -158,6 +160,10 @@ body {
     font-weight: bold;
     transform: rotate(45deg);
     cursor: pointer;
+    background-color: white;
+    border:none;
+
+    
 }
 
 
