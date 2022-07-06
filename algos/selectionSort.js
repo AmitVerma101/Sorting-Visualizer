@@ -45,7 +45,7 @@ function count(number) {
       
       a[b].style.backgroundColor = 'blue'
       
-      //a[c].style.backgroundColor = 'green'
+      a[c].style.backgroundColor = 'green'
   }
 
   function sleep(ms) {
@@ -67,9 +67,10 @@ async function SelectionSort(){
   let x = number[0].childNodes;
   for (let index = 0; index < noOfDiv -1 ; index++) {
          min_index=index;
+         x[min_index].style.backgroundColor = 'purple'
     for (let index1 = index+1; index1 < noOfDiv; index1++) {
-        x[min_index].style.backgroundColor = 'purple'
             x[index1].style.backgroundColor = 'orange'
+            await sleep(time);
             if(x[index1].clientHeight < x[min_index].clientHeight)
             {
                 demo2(x[min_index],x[index1],time)
@@ -81,8 +82,13 @@ async function SelectionSort(){
                 x[index1].style.backgroundColor="blue"
             }    
     }
-    swap1(x,min_index,index,time)
+   // x[index].style.backgroundColor='purple';
+    await sleep(time);
+    swap1(x,min_index,index,time);
+   // x[index].style.backgroundColor='green';
 }
+x[noOfDiv-1].style.backgroundColor='green';
+
 //x[noOfDiv-1].style.backgroundColor='green'
 }
 
