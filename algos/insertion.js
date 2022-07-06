@@ -77,6 +77,10 @@ async function InsertionSort(){
         
     }
     x[noOfDiv-1].style.backgroundColor='blue'
+    for(let i=0;i<noOfDiv;i++){
+      await sleep(time);
+      x[i].style.backgroundColor='green';
+    }
 }
 
 
