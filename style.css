@@ -264,7 +264,11 @@ body {
     }
  }
 
-
+.graph {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
  /*Styling the desc files*/
  
 

@@ -33,16 +33,18 @@ function count(number) {
   async function demo3(a,b,time){
     await sleep(time)
     b.style.height=a.style.height;
+   // b.innerText=a.innerText;
     a.style.backgroundColor='purple'
     b.style.backgroundColor='blue'
     // a.style.backgroundColor = 'blue'
     // b.style.backgroundColor = 'purple'
     
 }
-async function func1(a,key,time){
+async function func1(a,key,time,text){
     await sleep(time)
     a.style.backgroundColor='blue'
     a.style.height=key
+   // a.innerText=text
 }   
 async function InsertionSort(){
   let sortBody=document.getElementsByClassName("sortBody");
@@ -62,6 +64,7 @@ async function InsertionSort(){
         await sleep(time)
         
         key = x[index].style.height;
+        text=x[index].innerText
         index1=index-1
         while(index1>=0&&x[index1].style.height>key){
            x[index].style.backgroundColor='purple'
@@ -69,7 +72,7 @@ async function InsertionSort(){
            await sleep(time)
            index1=index1-1
        }
-       func1(x[index1+1],key,time)
+       func1(x[index1+1],key,time,text)
        await sleep(time)
       
 

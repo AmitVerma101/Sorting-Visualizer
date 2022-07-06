@@ -17,7 +17,8 @@ function customRepeat(width,interval,container,array){
     for (let index = 0; index < width; index=index+interval+1) {
         
         let element=document.createElement('div')
-        element.style.height= `${4*array[i]}px`;
+        element.style.height= `${50+4*array[i]}px`;
+        element.innerText=array[i];
       //  console.log(4*array[index])
         element.style.width= `${interval}px`
         container[0].appendChild(element);

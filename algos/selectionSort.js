@@ -39,9 +39,15 @@ function count(number) {
   {
       await sleep(time)
       let num1 = a[b].clientHeight
+      let text=a[c].innerText;
+      console.log(text)
       let num2 = a[c].clientHeight
       a[c].style.height = `${num1}px`
+      a[c].innerText=a[b].innerText;
       a[b].style.height = `${num2}px`
+      a[b].innerText=text;
+
+
       
       a[b].style.backgroundColor = 'blue'
       

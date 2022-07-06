@@ -38,8 +38,12 @@ function count(number) {
      let n2 = r - m;
     let L=[];
     let R=[];
+    let text1=[];
+    let text2=[];
     for (let index = 0; index < n1; index++) {
         L[index] = x[l + index].style.height;
+        text1[index]=x[l+index].innerText;
+        //console.log(x[l+index].innerText)   
         x[l+index].style.backgroundColor = "orange";
         console.log(x[l+index].style.backgroundColor)
         await timeout(time);    
@@ -49,6 +53,7 @@ function count(number) {
      
     for (let index1 = 0; index1 < n2; ++index1){
          R[index1] = x[m + 1 + index1].style.height;
+         text2[index1]=x[m+1+index1].innerText
          x[m+1+index1].style.backgroundColor="orange";
         await timeout(time);
 
@@ -62,6 +67,7 @@ function count(number) {
              while (i < n1 && j < n2) {
                  if (L[i] <= R[j]) {
                       x[k].style.height = L[i];
+                      x[k].innerText=text1[i];
                       x[k].style.backgroundColor="green";
                       await timeout(time);
                       i++;
@@ -69,6 +75,8 @@ function count(number) {
                      }
                  else {
                      x[k].style.height = R[j];
+                     x[k].innerText = text2[j];
+
                      x[k].style.backgroundColor="green";
                       await timeout(time);
                      
@@ -79,6 +87,8 @@ function count(number) {
               }
               while (i < n1) {
                         x[k].style.height = L[i];
+                        x[k].innerText = text1[i];
+
                         x[k].style.backgroundColor="green";
                         await timeout(time);
                         
@@ -90,6 +100,8 @@ function count(number) {
                     while (j < n2) {
                       
                        x[k].style.height = R[j];
+                       x[k].innerText = text2[j];
+
                        x[k].style.backgroundColor="green";
                        
                        await timeout(time);

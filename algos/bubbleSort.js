@@ -36,10 +36,14 @@ function sleep(ms) {
 async function demo1(x,index1, index2, a, b, time) {
   // demo(index1,index2,a,b)
   await sleep(time)
+ let text=x[index1].innerText;
+console.log(text)
   x[index1].style.height = `${b}px`;
-  
+ x[index1].innerText=x[index2].innerText;
   // await sleep(time)
   x[index2].style.height = `${a}px`;
+  x[index2].innerText=text;
+
   
   
   

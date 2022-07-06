@@ -36,6 +36,7 @@ function count(number) {
 async function swap2(x,i,j,time)
 {
     let temp = x[i].style.height;
+    let text=x[i].innerText;
    
     x[i].style.backgroundColor="green";
     await timeout1(time)
@@ -44,10 +45,11 @@ async function swap2(x,i,j,time)
     await timeout1(time)
 
     x[i].style.height = x[j].style.height;
-
+    x[i].innerText=x[j].innerText;
     await timeout1(time)
 
     x[j].style.height = temp;
+    x[j].innerText=text;
     await timeout1(time)
     x[i].style.backgroundColor="blue";
     x[j].style.backgroundColor="blue";
