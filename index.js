@@ -1,4 +1,3 @@
-//declaring a global variable for the run and description
 var selector="";
 
 
@@ -20,10 +19,10 @@ function customRepeat(width,interval,container,array){
         element.style.height= `${50+4*array[i]}px`;
         element.innerText=array[i];
       //  console.log(4*array[index])
-        element.style.width= `${interval}px`
+        element.style.width= `${interval}px`;
         container[0].appendChild(element);
         console.log("Hello")
-    element.style.backgroundColor='blue';
+    element.style.backgroundColor='rgb(8, 143, 143)';
         element.style.margin='1px';
         i++;
 }
@@ -31,38 +30,55 @@ function customRepeat(width,interval,container,array){
 
 
 
-function Repeat(width,interval,container,element){
-    for (let index = 0; index < width; index=index+interval+1) {
-        let element=document.createElement('div')
-        element.style.height= `${100+Math.random()*400}px`;
-        element.style.width= `${interval}px`
+function Repeat(width, interval, container) {
+    for (let index = 0; index < width; index += interval) {
+        let element = document.createElement('div');
+        element.style.height = `${100 + Math.random() * 400}px`;
+        element.style.width = `${interval - 1}px`;
+        element.style.backgroundColor = 'rgb(8, 143, 143)';  // Bars start with the desired color
+        element.style.margin = '1px';
+
         container[0].appendChild(element);
-        console.log("Hello")
-    element.style.backgroundColor='blue';
-        element.style.margin='1px';
-}
+    }
 }
 
 
 
-function generateArray(){
-    let data=document.getElementById("customInput").value;
-    let array=data.split(",");
-    let modalBody=document.getElementsByClassName("modalBody");
-    console.log(modalBody[0])
-    modalBody[0].style.display="none";
 
-    console.log(array);
-    let container= document.getElementsByClassName("graph");
 
-    let width=container[0].clientWidth;
-    console.log(width)
+function generateArray() {
+    const raw = document.getElementById("customInput").value.trim();
+
+    if (!raw) {
+        alert("Please enter a valid comma-separated list of numbers.");
+        return;
+    }
+
+    const array = raw
+        .split(",")
+        .map(s => parseInt(s.trim()))
+        .filter(n => !isNaN(n)); // Remove invalid numbers
+
+    if (array.length === 0) {
+        alert("No valid numbers entered. Please enter comma-separated integers.");
+        return;
+    }
+
+    const modalBody = document.getElementsByClassName("modalBody")[0];
+    modalBody.style.display = "none";
+
+    const container = document.getElementsByClassName("graph");
+    const width = container[0].clientWidth;
+
     removeAllChildNodes(container);
-    let interval=width/array.length;
-    data.value='';
-    customRepeat(width,interval,container,array);
 
+    const interval = width / array.length;
+
+    document.getElementById("customInput").value = ''; // Clear input field
+
+    customRepeat(width, interval, container, array);
 }
+
 
 
 
@@ -108,71 +124,19 @@ function createArray(){
 
 
 
-function setValue(){
-   let a = document.getElementById("myRange1");
-   if(a.value==1){
-       a.value = "1";
-       console.log(a.value);
-   } 
-   if(a.value<20&&a.value>1){
-        a.value = "20";
-        console.log(a.value)
+;
 
-    }
-    else if(a.value>=20&&a.value<40){
-        a.value = "40";
-        console.log(a.value)
-    }
-    else if(a.value>=40&&a.value<60)
-    {
-        a.value = "60";
-        console.log(a.value)
-    }
-    else if(a.value>=60&&a.value<80)
-    {
-        a.value = "80";
-        console.log(a.value)
-    }
-    else if(a.value>=80&&a.value<100) {
-        a.value = "100";
-        console.log(a.value)
-    }
-    
+function setValue() {
+    let a = document.getElementById("myRange1");
+    console.log("Speed set to: " + a.value);  }
+
+
+function setValue2() {
+    let a = document.getElementById("myRange2");
+    console.log("Input size set to: " + a.value);  // ✅ Log the actual value
+    createArray();  // ✅ Recreate the array based on the new input size
 }
 
-
-
-function setValue2(){
-    let a = document.getElementById("myRange2");
-    if(a.value==1){
-        a.value = "1";
-        console.log(a.value);
-    } 
-    if(a.value<20&&a.value>1){
-         a.value = "20";
-         console.log(a.value)
- 
-     }
-     else if(a.value>=20&&a.value<40){
-         a.value = "40";
-         console.log(a.value)
-     }
-     else if(a.value>=40&&a.value<60)
-     {
-         a.value = "60";
-         console.log(a.value)
-     }
-     else if(a.value>=60&&a.value<80)
-     {
-         a.value = "80";
-         console.log(a.value)
-     }
-     else if(a.value>=80&&a.value<100) {
-         a.value = "100";
-         console.log(a.value)
-     }
-     
- }
 
 
 
@@ -196,6 +160,18 @@ function customArray(){
     console.log(modalBody[0])
     modalBody[0].style.display="flex"
 }
+function createArray() {
+    let a = document.getElementById("myRange2");
+    let container = document.getElementsByClassName("graph");
+    let width = container[0].clientWidth;
+    removeAllChildNodes(container);
+
+    let inputSize = parseInt(a.value);  // ✅ Get the actual value from the slider
+    let interval = width / inputSize;    // ✅ Calculate the interval based on input size
+
+    Repeat(width, interval, container);
+}
+
 
 
 
@@ -302,5 +278,3 @@ function sortSelector(x){
 
      }
 }
-
- 

@@ -119,6 +119,8 @@ async function partition(x,l,h,time)
        let number = document.getElementsByClassName("graph");
    let noOfDiv = count(number);
    console.log(noOfDiv)
+
+   
    let x = number[0].childNodes;
   
    l=0;
