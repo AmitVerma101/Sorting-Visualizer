@@ -58,43 +58,50 @@ function count(number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-async function SelectionSort(){
-  let sortBody=document.getElementsByClassName("sortBody");
-    console.log(sortBody[0])
-    sortBody[0].style.display="none"
-  let close=document.getElementById("stop");
-  close.style.display="inline"; 
-  let min_index;
+  async function SelectionSort(){
+    let sortBody = document.getElementsByClassName("sortBody");
+    console.log(sortBody[0]);
+    sortBody[0].style.display = "none";
+    
+    let close = document.getElementById("stop");
+    close.style.display = "inline"; 
+    
+    let min_index;
     let speed = document.getElementById("myRange1").value;
-   let time = calcTime(speed)
-      let number = document.getElementsByClassName("graph");
-  let noOfDiv = count(number);
-  console.log(noOfDiv)
-  let x = number[0].childNodes;
-  for (let index = 0; index < noOfDiv -1 ; index++) {
-         min_index=index;
-         x[min_index].style.backgroundColor = 'purple'
-    for (let index1 = index+1; index1 < noOfDiv; index1++) {
-            x[index1].style.backgroundColor = 'orange'
-            await sleep(time);
-            if(x[index1].clientHeight < x[min_index].clientHeight)
-            {
-                demo2(x[min_index],x[index1],time)
-                await sleep(time)
-                min_index = index1
-            }   
-            else {
-                await sleep(time)
-                x[index1].style.backgroundColor="blue"
-            }    
+    let time = calcTime(speed);
+    let number = document.getElementsByClassName("graph");
+    let noOfDiv = count(number);
+    console.log(noOfDiv);
+    let x = number[0].childNodes;
+  
+    for (let index = 0; index < noOfDiv - 1; index++) {
+      min_index = index;
+      x[min_index].style.backgroundColor = 'purple'; // Mark current as purple (active for searching)
+  
+      for (let index1 = index + 1; index1 < noOfDiv; index1++) {
+        x[index1].style.backgroundColor = 'orange'; // Mark current as orange (active for comparison)
+        
+        await sleep(time);
+        if (x[index1].clientHeight < x[min_index].clientHeight) {
+          demo2(x[min_index], x[index1], time);
+          await sleep(time);
+          min_index = index1;
+        } else {
+          await sleep(time);
+          x[index1].style.backgroundColor = "blue"; // Set as blue after comparison
+        }
+      }
+  
+      await sleep(time);
+      swap1(x, min_index, index, time); // Swap the elements
+  
+      // After sorting each element, mark it green
+      x[index].style.backgroundColor = "green";
     }
-   // x[index].style.backgroundColor='purple';
-    await sleep(time);
-    swap1(x,min_index,index,time);
-   // x[index].style.backgroundColor='green';
-}
-x[noOfDiv-1].style.backgroundColor='green';
-
-//x[noOfDiv-1].style.backgroundColor='green'
-}
+  
+    // Ensure the last element is marked green
+    x[noOfDiv - 1].style.backgroundColor = "green";
+  }
+  
+  
 

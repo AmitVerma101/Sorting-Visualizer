@@ -1,1 +1,46 @@
-this is the merge sort
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>About Quick Sort</title>
+</head>
+<body>
+        <div id="container">
+
+    
+    <div id="bubbleDesc">
+<h3>
+    Quick sort is a divide-and-conquer algorithm that picks an element as a pivot and partitions the array around the pivot. 
+    It recursively sorts the sub-arrays formed by dividing the array into elements less than and greater than the pivot.
+</h3>
+<br><hr><br><br>
+<p>
+       pseudocode  <br>
+    function swap(arr, xp, yp) <br>
+{<br>
+    &nbsp&nbsp var temp = arr[xp];<br>
+    &nbsp&nbsp arr[xp] = arr[yp];<br>
+    &nbsp &nbsp arr[yp] = temp;<br>
+}<br>
+<br>
+<br>
+function partition(arr, low, high)<br>
+{<br>
+    &nbsp &nbsp var pivot = arr[high];<br>
+    &nbsp &nbsp var i = (low - 1);<br>
+    &nbsp &nbsp for (var j = low; j <= high - 1; j++)<br>
+    {<br>
+        &nbsp &nbsp &nbsp &nbsp if (arr[j] < pivot)<br>
+        {<br>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp i++;<br>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp swap(arr, i, j);<br>
+        }<br>
+    }<br>
+    &nbsp &nbsp
+</div>
+</div>
+</body>
+</html>
